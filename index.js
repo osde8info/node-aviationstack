@@ -12,13 +12,9 @@ axios.get('http://api.aviationstack.com/v1/flights', {params})
     const resp = response.data;
     if (Array.isArray(resp.data)) {
         resp.data.forEach(flight => {
-            //if (!flight['live']['is_ground']) {
-		console.log(flight.flight_date)
-		console.log(flight.departure.iata)
-		console.table(flight['airline']['name'], flight['flight']['iata'],
-                    flight['departure']['airport'], flight['departure']['iata'],
-                    flight['arrival']['airport'], flight['arrival']['iata']);
-            //}
+		console.log([flight.flight.iata,flight.flight_date,flight.departure.iata])
+		console.log([flight.arrival.iata,flight.arrival.scheduled,flight.arrival.estimated])
+		console.log('')
         });
     }
   }).catch(error => {
