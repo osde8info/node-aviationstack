@@ -1,6 +1,6 @@
 const axios = require('axios');
 const params = {
-  access_key: 'YOUR_ACCESS_KEY'
+  access_key: process.env.MYAPIKEY
 }
 
 axios.get('https://api.aviationstack.com/v1/flights', {params})
