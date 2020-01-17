@@ -5,8 +5,6 @@ const params = {
   limit: 5
 }
 
-console.log(params.access_key)
-
 axios.get('http://api.aviationstack.com/v1/flights', {params})
   .then(response => {
     const resp = response.data;
